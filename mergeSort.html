@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hackathon Sort - Bubble</title>
+  </head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bubbleSort.html" >Bubble</a></li>
+            <li><a href="selectionSort.html">Selection</a></li>
+            <li><a href="insertionSort.html" >Insertion</a></li>
+            <li><a href="mergeSort.html" class ="active">Merge</a></li>
+            <span id ="typeSort" value="merge"></span>
+        </ul>
+    </header>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        
+
+        <div class="bars_container" id ="bars_container"></div>
+
+        <div class="bars_slider">
+            <input type="range" min="20" max="100" value ="1" 
+            class = "slider" id="slider">
+            <br>
+            <p>Amount: <span class ="slider"id = "value"></span></p>
+
+            <input type="range" min="1" max="2000" value ="1" 
+            class = "slider" id="slider2">
+            <br>
+            <p>Amount: <span class ="slider"id = "value2"></span>
+
+        </div>
+        <div class="btns_container">
+            <button id="randomize_array_btn" class = "buttonClass">Randomize Array</button>
+            <button id="sort_btn" class = "buttonClass">Begin Visualization</button>
+        </div>
+        
+        
+
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <h1>Merge Sort</h1>
+    <br>
+    <br>
+    <section>
+        <br>
+        <h2>How does this work?</h2>
+        <br>
+        <p class = "textt">
+            Merge Sort, along with Binary Search, are commonly known as "Divide and Conquer" algorithms.
+            This means they divide up the work as they complete their respective tasks. Merge Sort works by splitting the array into two parts continuously, while simultaneously sorting them. 
+            This algorithm is coded recursively, which means a function is called within itself. This is because as the array sections split, a merge function is called repeatedly to combine each section and create the sorted array.
+        </p>
+        <br>
+        <br>
+        <h2>Time Complexity</h2>
+        <br>
+        <p>
+            Worst Case: O(n * log(n))
+        </p>
+        <br>
+        <p>
+            Best Case: O(n * log(n))
+        </p>
+        <br>
+        <p>
+            Average Case: O(n * log(n))
+        </p>
+
+    </section>
+    <script src = "index.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #030613;
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 0 #252a72;
+    transition: ease-out 0.3s;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+    display: block;
+    background: #4fcdb9;
+    color: #1e4c4d;
+    box-shadow: inset 150px 0 0 0 #4fcdb9;
+}
+
+
+.container{
+    max-width: 100vw;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.bars_container{
+    display: flex;
+    flex-direction: row;
+    transition: height 0.5s ease-in-out;
+    transform: rotate(180deg);
+    margin: 30 30px;
+    margin-top: 20px;
+    position:absolute;
+    top: 180px;
+    height: 500px;
+    
+
+    
+}
+
+/* add dynamic width soon */
+.bar{
+    width: 50px;
+    border: 1px solid black;
+    margin: 0 2px;
+    transition: height 0.5s ease-in-out;
+    transform: rotate(180deg);
+}
+
+.buttonClass{
+    padding: 0.5rem;
+border-radius: 10%;
+width: 180px;
+height: 75px;
+border: none;
+color: white;
+background-color: #0a1928;
+box-shadow: inset 0 0 0 0 #252a72;
+transition: ease-out 0.3s;
+font-size: 1.5rem;
+outline: none;
+margin-right: 20px;
+margin-left: 20px;
+cursor: pointer;
+
+}
+.buttonClass:hover {
+    box-shadow: inset 180px 0 0 0 #4fcdb9;
+    color: #1e4c4d;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+main{
+    position: absolute;
+}
+
+.slider{
+    color: #4fcdb9;
+    position: relative;
+    top: 310px;
+    padding: 0.5rem;
+    margin-right: 10px;
+    outline: none;
+}
+
+.slider:hover{
+    cursor: pointer;
+    color:#fff
+}
+.sort{
+    position: fixed;
+}
+
+.authortext{
+    position: relative;
+    text-align: center;
+    
+    top: 800px;
+    left: 925px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+
+}
+
+section{
+    text-align: center;
+    color: white;
+}
+
+.textt{
+    margin-left: 300px;
+    margin-right: 300px;
+}

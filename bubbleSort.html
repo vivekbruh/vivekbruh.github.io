@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hackathon Sort - Bubble</title>
+  </head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bubbleSort.html" class ="active">Bubble</a></li>
+            <li><a href="selectionSort.html">Selection</a></li>
+            <li><a href="insertionSort.html" >Insertion</a></li>
+            <li><a href="mergeSort.html">Merge</a></li>
+            <span id ="typeSort" value="bubble"></span>
+        </ul>
+    </header>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        
+
+        <div class="bars_container" id ="bars_container"></div>
+
+        <div class="bars_slider">
+            <input type="range" min="20" max="100" value ="1" 
+            class = "slider" id="slider">
+            <br>
+            <p>Amount: <span class ="slider"id = "value"></span></p>
+            
+            <input type="range" min="1" max="2000" value ="1" 
+            class = "slider" id="slider2">
+            <br>
+            <p>Amount: <span class ="slider"id = "value2"></span></p>
+            
+        </div>
+        <div class="btns_container">
+            <button id="randomize_array_btn" class = "buttonClass">Randomize Array</button>
+            <button id="sort_btn" class = "buttonClass">Begin Visualization</button>
+        </div>
+        
+        
+
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <h1>Bubble Sort</h1>
+    <br>
+    <br>
+    <section>
+        <br>
+        <h2>How does this work?</h2>
+        <br>
+        <p class = "textt">
+            Bubble Sort is a fairly simple algorithm, both to implement and to understand.
+            It works by starting with the first two items in the array, and if the first item is greater than the second,
+            a swap is made. It repeats this process with the second and third element, contunuing until it reaches the end of the array.
+            Once that happens, the algorithm checks if the array is fully sorted. If not, it repeats the whole process, making it quite
+            inefficient for large arrays.
+        </p>
+        <br>
+        <br>
+        <h2>Time Complexity</h2>
+        <br>
+        <p>
+            Worst Case: O(n^2)
+        </p>
+        <br>
+        <p>
+            Best Case: O(n) -- (When it is already sorted)
+        </p>
+        <br>
+        <p>
+            Average Case: O(n^2)
+        </p>
+
+    </section>
+    <script src = "index.js"></script>
+</body>
+</html>

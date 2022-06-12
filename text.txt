@@ -1,0 +1,231 @@
+
+let randomize_array = document.getElementById("randomize_array_btn")
+let sort_btn = document.getElementById("sort_btn")
+let bars_container = document.getElementById("bars_container")
+let typeSort = document.getElementById("typeSort").getAttribute('value');
+
+
+var slider = document.getElementById("slider");
+var output = document.getElementById("value")
+
+let minRange = 1;
+let maxRange = 20;
+
+
+let currRun = false;
+let unsorted_array = new Array(20);
+makeRandomArray(20);
+
+output.innerHTML = "20";
+let numOfBars = 0;
+slider.oninput = function() {
+    if (currRun == false)
+    {
+        bars_container.innerHTML = "";
+        output.innerHTML = this.value;
+        numOfBars = output.innerHTML;
+        unsorted_array = new Array(numOfBars);
+        makeRandomArray(output.innerHTML);
+        renderBars(unsorted_array);
+    }
+
+    
+}
+
+
+
+
+
+
+
+function randomizeNum(min, max)
+{
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function makeRandomArray(num)
+{
+    for (let i = 0; i < num; i++)
+    {
+        unsorted_array[i] = randomizeNum(minRange, maxRange);
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    makeRandomArray();
+    renderBars(unsorted_array);
+});
+
+
+async function renderBars(array)
+{
+    for (let i = 0; i < array.length; i++)
+    {
+        let bar = document.createElement("div");
+        bar.classList.add("bar")
+        bar.style.height = array[i] * 30 + "px";
+        bar.style.width = 900/numOfBars + "px";
+        console.log(bar.style.width);
+        bars_container.appendChild(bar);
+        bar.style.backgroundColor = "#a2b1b9";
+
+    }
+}
+
+
+
+randomize_array.addEventListener("click", function () {
+    console.log(currRun);
+    if (currRun == false)
+    {
+        makeRandomArray(numOfBars);
+        bars_container.innerHTML = "";
+        renderBars(unsorted_array);
+    }
+});
+
+function sleep(ms)
+{
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function bubbleSort(array) 
+{
+    let bars = document.getElementsByClassName("bar");
+    for (let i = 0; i < array.length; i++)
+        for (let j = 0; j < array.length - i - 1; j++)
+        {
+            if (array[j] > array[j+1])
+            {   
+                for (let k = 0; k < bars.length; k++)
+                {
+                    if (k !== j && k !== j + 1)
+                    {
+                        bars[k].style.backgroundColor = "#a2b1b9";
+                    }
+                }
+                let temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp
+                bars[j].style.height = array[j] * 30 + "px";
+                bars[j].style.backgroundColor = "#4fcdb9";
+                bars[j+1].style.height = array[j+1] * 30 + "px";
+                bars[j+1].style.backgroundColor = "#4fcdb9";
+                await sleep(70);
+            }
+        }
+        await sleep(70);
+    currRun = false;
+    return array;
+}
+
+
+
+
+async function selectionSort(array) 
+{
+    console.log(array);
+    let bars = document.getElementsByClassName("bar");
+    for (let i = 0; i < array.length-1; i++)
+    {
+        bars[i].style.backgroundColor = "#4fcdb9";
+        var min = array[i];
+        var pos = i;
+        console.log(array[i]);
+        for (let j = i+1; j < array.length; j++)
+        {
+            
+            for (let k = 0; k < bars.length; k++)
+                {
+                    if (k !== j)
+                    {
+                        bars[k].style.backgroundColor = "#a2b1b9";
+                    }
+                }
+            
+            if (array[j] < min)
+            {
+                console.log(array[i]);
+                console.log(min);
+                min = array[j];
+                pos = j;
+            }
+            
+            
+        }
+        let temp = array[pos];
+        array[pos] = array[i];
+        array[i] = temp;
+        bars[pos].style.height = array[pos] * 30 + "px";
+        bars[pos].style.backgroundColor = "#4fcdb9";
+        bars[i].style.height = array[i] * 30 + "px";
+        bars[i].style.backgroundColor = "#4fcdb9";
+        await sleep(70);
+        
+    }
+    await sleep(70);
+    console.log(array)
+    currRun = false;
+    return array;
+}
+
+/*
+async function insertionSort(array)
+{
+    console.log(array);
+    console.log("insertion sort runnig");
+    
+    let bars = document.getElementsByClassName("bar");
+    for (let i = i; i < array.length; i++)
+    {
+        bars[i].style.backgroundColor = "#4fcdb9";
+        temp = array[i];
+        var j = i-1;
+        while (j >= 0 && array[j] > temp)
+        {
+            for (let k = 0; k < bars.length; k++)
+                {
+                    if (k !== j && k !== j + 1)
+                    {
+                        bars[k].style.backgroundColor = "#a2b1b9";
+                    }
+                }
+            bars[j].style.backgroundColor = "#4fcdb9";
+            array[j+1] = array[j];
+            bars[j+1].style.height = bars[i].style.height; 
+            j -= 1;
+        }
+        array[j+1] = temp;
+    }
+    await sleep(70);
+    console.log(array);
+    currRun = false;
+    return array;
+    
+}
+*/
+
+
+sort_btn.addEventListener("click", function () {
+    currRun = true;
+    console.log(currRun)
+    if (typeSort == "bubble")
+    {
+        let sorted_array = bubbleSort(unsorted_array);
+    }
+    if (typeSort == "selection")
+    {
+        let sorted_array = selectionSort(unsorted_array);
+    }
+    if (typeSort == "insertion")
+    {
+        console.log("insertion");
+        console.log("insertion");
+        console.log("insertion");
+        console.log("insertion");
+        let sorted_array = selectionSort(unsorted_array);
+    }
+    console.log(currRun)
+});

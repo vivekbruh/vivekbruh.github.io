@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hackathon Sort - Selection</title>
+  </head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bubbleSort.html" >Bubble</a></li>
+            <li><a href="selectionSort.html"class ="active">Selection</a></li>
+            <li><a href="insertionSort.html">Insertion</a></li>
+            <li><a href="mergeSort.html">Merge</a></li>
+            <div class="sort" id ="typeSort" value="selection"></div>
+        </ul>
+    </header>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        
+
+        <div class="bars_container" id ="bars_container"></div>
+
+        <div class="bars_slider">
+            <input type="range" min="20" max="100" value ="1" 
+            class = "slider" id="slider">
+            <br>
+            <p>Amount: <span class ="slider"id = "value"></span></p>
+
+            <input type="range" min="1" max="2000" value ="1" 
+            class = "slider" id="slider2">
+            <br>
+            <p>Amount: <span class ="slider"id = "value2"></span></p>
+        </div>
+
+        
+
+        <div class="btns_container">
+            <button id="randomize_array_btn" class = "buttonClass">Randomize Array</button>
+            <button id="sort_btn" class = "buttonClass">Begin Visualization</button>
+        </div>
+        
+        
+
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <h1>Selection Sort</h1>
+    <br>
+    <br>
+    <section>
+        <br>
+        <h2>How does this work?</h2>
+        <br>
+        <p class = "textt">
+            Selection Sort is another simple sorting algorithm. It works by starting at either the first or last element of the array,
+            and then checking every element after it to find the minimum. Once it loops through the rest of the array and locates it, a swap is made
+            with the starting element and the minimum element. The algorithm then increments the location of the starting index, and repeats the process. 
+            This happens until the array is completely sorted. While this algorithm also implements two loops, it is typically faster than Bubble Sort.
+        </p>
+        <br>
+        <br>
+        <h2>Time Complexity</h2>
+        <br>
+        <p>
+            Worst Case: O(n^2)
+        </p>
+        <br>
+        <p>
+            Best Case: O(n^2)
+        </p>
+        <br>
+        <p>
+            Average Case: O(n^2)
+        </p>
+
+    </section>
+    <script src = "index.js"></script>
+</body>
+</html>
