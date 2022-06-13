@@ -1,2 +1,2 @@
 # vivekbruh.github.io
-HackBytes Hackathon
+Sorting Visualizer - HackBytes Hackathon
